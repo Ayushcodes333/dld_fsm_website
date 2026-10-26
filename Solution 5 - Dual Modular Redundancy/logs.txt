@@ -1,0 +1,72 @@
+VCD info: dumpfile fsm_simulation.vcd opened for output.
+
+=========================================================================
+SCENARIO 1: Correct Password (1 -> 0 -> 1 -> 0) - Both Cores Agree (mask=00)
+=========================================================================
+Time=  0 ns | in=0 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=20000 ns | in=1 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=25000 ns | in=1 | mask=00 | s1=0100 s2=0100 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=30000 ns | in=0 | mask=00 | s1=0100 s2=0100 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=35000 ns | in=0 | mask=00 | s1=0101 s2=0101 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=40000 ns | in=1 | mask=00 | s1=0101 s2=0101 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=45000 ns | in=1 | mask=00 | s1=0110 s2=0110 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=50000 ns | in=0 | mask=00 | s1=0110 s2=0110 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=55000 ns | in=0 | mask=00 | s1=0111 s2=0111 | Mismatch:0 | Meta:0 | Alarm:0 | access=1
+>> SCENARIO 1 PASSED: Dual consensus reached (1 & 1), Access Granted!
+
+=========================================================================
+SCENARIO 2: Single Fault Injected into Core 1 (mask=8'h04) -> Alarm Latched!
+=========================================================================
+Time=90000 ns | in=0 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=110000 ns | in=1 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=115000 ns | in=1 | mask=00 | s1=0100 s2=0100 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=120000 ns | in=0 | mask=04 | s1=0100 s2=0100 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=125000 ns | in=0 | mask=04 | s1=0001 s2=0101 | Mismatch:1 | Meta:0 | Alarm:0 | access=0
+Time=130000 ns | in=1 | mask=00 | s1=0001 s2=0101 | Mismatch:1 | Meta:0 | Alarm:0 | access=0
+Time=135000 ns | in=1 | mask=00 | s1=0011 s2=0110 | Mismatch:1 | Meta:0 | Alarm:1 | access=0
+Time=140000 ns | in=0 | mask=00 | s1=0011 s2=0110 | Mismatch:1 | Meta:0 | Alarm:1 | access=0
+Time=145000 ns | in=0 | mask=00 | s1=0011 s2=0111 | Mismatch:1 | Meta:0 | Alarm:1 | access=0
+>> SCENARIO 2 PASSED: Discrepancy between Core 1 and Core 2 detected, Alarm=1, Access Denied!
+
+=========================================================================
+SCENARIO 3: Attacker Glitches Core 1 to SUCCESS -> AND Gate Blocks Bypass!
+=========================================================================
+Time=180000 ns | in=0 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=200000 ns | in=1 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=205000 ns | in=1 | mask=00 | s1=0100 s2=0100 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=215000 ns | in=1 | mask=00 | s1=1001 s2=1001 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=225000 ns | in=1 | mask=00 | s1=1010 s2=1010 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=230000 ns | in=0 | mask=0d | s1=1010 s2=1010 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=235000 ns | in=0 | mask=0d | s1=1110 s2=0011 | Mismatch:1 | Meta:0 | Alarm:0 | access=0
+Time=240000 ns | in=0 | mask=00 | s1=1110 s2=0011 | Mismatch:1 | Meta:0 | Alarm:0 | access=0
+Time=245000 ns | in=0 | mask=00 | s1=0011 s2=0011 | Mismatch:0 | Meta:0 | Alarm:1 | access=0
+>> SCENARIO 3 PASSED: Dual consensus AND gate thwarted single-core bypass attack!
+
+=========================================================================
+SCENARIO 4: Laser Attack -> Metastable Core 1 (mask=8'h0x) -> Alarm=1
+=========================================================================
+Time=270000 ns | in=0 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=290000 ns | in=1 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=295000 ns | in=1 | mask=00 | s1=0100 s2=0100 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=300000 ns | in=0 | mask=0x | s1=0100 s2=0100 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=305000 ns | in=0 | mask=0x | s1=xxxx s2=0101 | Mismatch:0 | Meta:1 | Alarm:0 | access=0
+Time=310000 ns | in=1 | mask=00 | s1=xxxx s2=0101 | Mismatch:0 | Meta:1 | Alarm:0 | access=0
+Time=315000 ns | in=1 | mask=00 | s1=0011 s2=0110 | Mismatch:1 | Meta:0 | Alarm:1 | access=0
+Time=320000 ns | in=0 | mask=00 | s1=0011 s2=0110 | Mismatch:1 | Meta:0 | Alarm:1 | access=0
+Time=325000 ns | in=0 | mask=00 | s1=0011 s2=0111 | Mismatch:1 | Meta:0 | Alarm:1 | access=0
+>> SCENARIO 4 PASSED: Metastable state detected! Alarm=1, Access Denied!
+
+=========================================================================
+SCENARIO 5: Wrong Passcode (1110) - Both Cores Transition to LOCKED
+=========================================================================
+Time=360000 ns | in=0 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=380000 ns | in=1 | mask=00 | s1=0000 s2=0000 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=385000 ns | in=1 | mask=00 | s1=0100 s2=0100 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=395000 ns | in=1 | mask=00 | s1=1001 s2=1001 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=405000 ns | in=1 | mask=00 | s1=1010 s2=1010 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=410000 ns | in=0 | mask=00 | s1=1010 s2=1010 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+Time=415000 ns | in=0 | mask=00 | s1=0011 s2=0011 | Mismatch:0 | Meta:0 | Alarm:0 | access=0
+>> SCENARIO 5 PASSED: Both cores consistently locked out wrong passcode!
+
+All 5 test scenarios completed successfully.
+C:\Users\Fr3d\OneDrive\Desktop\DLD Project\Solution 5 - Dual Modular Redundancy\testbench.sv:165: $finish called at 450000 (1ps)

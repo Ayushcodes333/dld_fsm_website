@@ -1,0 +1,1019 @@
+$date
+	Thu Oct 22 12:13:07 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 4 ! state_out [3:0] $end
+$var wire 4 " state_C_out [3:0] $end
+$var wire 4 # state_B_out [3:0] $end
+$var wire 4 $ state_A_out [3:0] $end
+$var wire 1 % metastable_detected $end
+$var wire 1 & disagreement_detected $end
+$var wire 1 ' auth_C_out $end
+$var wire 1 ( auth_B_out $end
+$var wire 1 ) auth_A_out $end
+$var wire 1 * access_granted $end
+$var reg 1 + auth_in $end
+$var reg 1 , clk $end
+$var reg 12 - fault_mask [11:0] $end
+$var reg 1 . rst_n $end
+$scope module uut $end
+$var wire 1 * access_granted $end
+$var wire 1 ) auth_A_out $end
+$var wire 1 ( auth_B_out $end
+$var wire 1 ' auth_C_out $end
+$var wire 1 + auth_in $end
+$var wire 1 , clk $end
+$var wire 1 & disagreement_detected $end
+$var wire 12 / fault_mask [11:0] $end
+$var wire 1 % metastable_detected $end
+$var wire 1 . rst_n $end
+$var wire 4 0 state_A_out [3:0] $end
+$var wire 4 1 state_B_out [3:0] $end
+$var wire 4 2 state_C_out [3:0] $end
+$var wire 4 3 state_out [3:0] $end
+$var wire 1 4 voted_auth $end
+$var wire 4 5 voted_state [3:0] $end
+$var wire 4 6 sC [3:0] $end
+$var wire 4 7 sB [3:0] $end
+$var wire 4 8 sA [3:0] $end
+$var wire 1 9 is_metastable $end
+$var wire 1 : disagreement $end
+$var wire 1 ; aC $end
+$var wire 1 < aB $end
+$var wire 1 = aA $end
+$scope module core_A $end
+$var wire 1 + auth_in $end
+$var wire 1 , clk $end
+$var wire 4 > fault_mask [3:0] $end
+$var wire 1 . rst_n $end
+$var wire 4 ? state_out [3:0] $end
+$var wire 1 = auth_out $end
+$var parameter 4 @ ERR_1 $end
+$var parameter 4 A ERR_2 $end
+$var parameter 4 B ERR_3 $end
+$var parameter 4 C GOT_1 $end
+$var parameter 4 D GOT_10 $end
+$var parameter 4 E GOT_101 $end
+$var parameter 4 F IDLE $end
+$var parameter 4 G LOCKED $end
+$var parameter 4 H SUCCESS $end
+$var reg 4 I next_state [3:0] $end
+$var reg 4 J state [3:0] $end
+$upscope $end
+$scope module core_B $end
+$var wire 1 + auth_in $end
+$var wire 1 , clk $end
+$var wire 4 K fault_mask [3:0] $end
+$var wire 1 . rst_n $end
+$var wire 4 L state_out [3:0] $end
+$var wire 1 < auth_out $end
+$var parameter 4 M ERR_1 $end
+$var parameter 4 N ERR_2 $end
+$var parameter 4 O ERR_3 $end
+$var parameter 4 P GOT_1 $end
+$var parameter 4 Q GOT_10 $end
+$var parameter 4 R GOT_101 $end
+$var parameter 4 S IDLE $end
+$var parameter 4 T LOCKED $end
+$var parameter 4 U SUCCESS $end
+$var reg 4 V next_state [3:0] $end
+$var reg 4 W state [3:0] $end
+$upscope $end
+$scope module core_C $end
+$var wire 1 + auth_in $end
+$var wire 1 , clk $end
+$var wire 4 X fault_mask [3:0] $end
+$var wire 1 . rst_n $end
+$var wire 4 Y state_out [3:0] $end
+$var wire 1 ; auth_out $end
+$var parameter 4 Z ERR_1 $end
+$var parameter 4 [ ERR_2 $end
+$var parameter 4 \ ERR_3 $end
+$var parameter 4 ] GOT_1 $end
+$var parameter 4 ^ GOT_10 $end
+$var parameter 4 _ GOT_101 $end
+$var parameter 4 ` IDLE $end
+$var parameter 4 a LOCKED $end
+$var parameter 4 b SUCCESS $end
+$var reg 4 c next_state [3:0] $end
+$var reg 4 d state [3:0] $end
+$upscope $end
+$upscope $end
+$scope task apply_stimulus $end
+$var reg 12 e mask [11:0] $end
+$var reg 1 f in_val $end
+$upscope $end
+$scope task reset_fsm $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b111 b
+b11 a
+b0 `
+b110 _
+b101 ^
+b100 ]
+b1010 \
+b1001 [
+b1000 Z
+b111 U
+b11 T
+b0 S
+b110 R
+b101 Q
+b100 P
+b1010 O
+b1001 N
+b1000 M
+b111 H
+b11 G
+b0 F
+b110 E
+b101 D
+b100 C
+b1010 B
+b1001 A
+b1000 @
+$end
+#0
+$dumpvars
+0f
+bx e
+b0 d
+b1000 c
+b0 Y
+b0 X
+b0 W
+b1000 V
+b0 L
+b0 K
+b0 J
+b1000 I
+b0 ?
+b0 >
+0=
+0<
+0;
+0:
+09
+b0 8
+b0 7
+b0 6
+b0 5
+04
+b0 3
+b0 2
+b0 1
+b0 0
+b0 /
+0.
+b0 -
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#5000
+1,
+#10000
+0,
+#15000
+1,
+#20000
+b100 I
+b100 V
+b100 c
+1+
+b0 e
+1f
+1.
+0,
+#25000
+b100 !
+b100 3
+b100 5
+b1001 c
+b1001 V
+b1001 I
+b100 "
+b100 2
+b100 6
+b100 Y
+b100 d
+b100 #
+b100 1
+b100 7
+b100 L
+b100 W
+b100 $
+b100 0
+b100 8
+b100 ?
+b100 J
+1,
+#30000
+b101 I
+b101 V
+b101 c
+0+
+0f
+0,
+#35000
+b101 !
+b101 3
+b101 5
+b1010 I
+b1010 V
+b1010 c
+b101 $
+b101 0
+b101 8
+b101 ?
+b101 J
+b101 #
+b101 1
+b101 7
+b101 L
+b101 W
+b101 "
+b101 2
+b101 6
+b101 Y
+b101 d
+1,
+#40000
+b110 I
+b110 V
+b110 c
+1+
+1f
+0,
+#45000
+b110 !
+b110 3
+b110 5
+b11 c
+b11 V
+b11 I
+b110 "
+b110 2
+b110 6
+b110 Y
+b110 d
+b110 #
+b110 1
+b110 7
+b110 L
+b110 W
+b110 $
+b110 0
+b110 8
+b110 ?
+b110 J
+1,
+#50000
+b111 I
+b111 V
+b111 c
+0+
+0f
+0,
+#55000
+1*
+14
+b111 !
+b111 3
+b111 5
+1)
+1=
+b111 $
+b111 0
+b111 8
+b111 ?
+b111 J
+1(
+1<
+b111 #
+b111 1
+b111 7
+b111 L
+b111 W
+1'
+1;
+b111 "
+b111 2
+b111 6
+b111 Y
+b111 d
+1,
+#60000
+0,
+#65000
+1,
+#70000
+0,
+#75000
+1,
+#80000
+0,
+#85000
+1,
+#90000
+0*
+04
+b0 !
+b0 3
+b0 5
+b1000 I
+b1000 V
+b1000 c
+0)
+0=
+b0 $
+b0 0
+b0 8
+b0 ?
+b0 J
+0(
+0<
+b0 #
+b0 1
+b0 7
+b0 L
+b0 W
+0'
+0;
+b0 "
+b0 2
+b0 6
+b0 Y
+b0 d
+0.
+0,
+#95000
+1,
+#100000
+0,
+#105000
+1,
+#110000
+b100 I
+b100 V
+b100 c
+1+
+1f
+1.
+0,
+#115000
+b100 !
+b100 3
+b100 5
+b1001 c
+b1001 V
+b1001 I
+b100 "
+b100 2
+b100 6
+b100 Y
+b100 d
+b100 #
+b100 1
+b100 7
+b100 L
+b100 W
+b100 $
+b100 0
+b100 8
+b100 ?
+b100 J
+1,
+#120000
+b100 >
+b101 I
+b101 V
+b101 c
+b100 -
+b100 /
+0+
+b100 e
+0f
+0,
+#125000
+b101 !
+b101 3
+b101 5
+b11 I
+b1010 V
+b1010 c
+1&
+1:
+b1 $
+b1 0
+b1 8
+b1 ?
+b1 J
+b101 #
+b101 1
+b101 7
+b101 L
+b101 W
+b101 "
+b101 2
+b101 6
+b101 Y
+b101 d
+1,
+#130000
+b0 >
+b110 V
+b110 c
+b0 -
+b0 /
+1+
+b0 e
+1f
+0,
+#135000
+b110 !
+b110 3
+b110 5
+b11 c
+b11 V
+b110 "
+b110 2
+b110 6
+b110 Y
+b110 d
+b110 #
+b110 1
+b110 7
+b110 L
+b110 W
+b11 $
+b11 0
+b11 8
+b11 ?
+b11 J
+1,
+#140000
+b111 V
+b111 c
+0+
+0f
+0,
+#145000
+1*
+14
+b111 !
+b111 3
+b111 5
+1(
+1<
+b111 #
+b111 1
+b111 7
+b111 L
+b111 W
+1'
+1;
+b111 "
+b111 2
+b111 6
+b111 Y
+b111 d
+1,
+#150000
+0,
+#155000
+1,
+#160000
+0,
+#165000
+1,
+#170000
+0,
+#175000
+1,
+#180000
+0*
+04
+b0 !
+b0 3
+b0 5
+b1000 I
+b1000 V
+b1000 c
+0&
+0:
+b0 $
+b0 0
+b0 8
+b0 ?
+b0 J
+0(
+0<
+b0 #
+b0 1
+b0 7
+b0 L
+b0 W
+0'
+0;
+b0 "
+b0 2
+b0 6
+b0 Y
+b0 d
+0.
+0,
+#185000
+1,
+#190000
+0,
+#195000
+1,
+#200000
+b100 I
+b100 V
+b100 c
+1+
+1f
+1.
+0,
+#205000
+b100 !
+b100 3
+b100 5
+b1001 c
+b1001 V
+b1001 I
+b100 "
+b100 2
+b100 6
+b100 Y
+b100 d
+b100 #
+b100 1
+b100 7
+b100 L
+b100 W
+b100 $
+b100 0
+b100 8
+b100 ?
+b100 J
+1,
+#210000
+0,
+#215000
+b1001 !
+b1001 3
+b1001 5
+b1010 I
+b1010 V
+b1010 c
+b1001 $
+b1001 0
+b1001 8
+b1001 ?
+b1001 J
+b1001 #
+b1001 1
+b1001 7
+b1001 L
+b1001 W
+b1001 "
+b1001 2
+b1001 6
+b1001 Y
+b1001 d
+1,
+#220000
+0,
+#225000
+b1010 !
+b1010 3
+b1010 5
+b11 c
+b11 V
+b11 I
+b1010 "
+b1010 2
+b1010 6
+b1010 Y
+b1010 d
+b1010 #
+b1010 1
+b1010 7
+b1010 L
+b1010 W
+b1010 $
+b1010 0
+b1010 8
+b1010 ?
+b1010 J
+1,
+#230000
+b100 >
+b100 -
+b100 /
+0+
+b100 e
+0f
+0,
+#235000
+b11 !
+b11 3
+b11 5
+b111 I
+1&
+1:
+1)
+1=
+b111 $
+b111 0
+b111 8
+b111 ?
+b111 J
+b11 #
+b11 1
+b11 7
+b11 L
+b11 W
+b11 "
+b11 2
+b11 6
+b11 Y
+b11 d
+1,
+#240000
+b0 >
+b0 -
+b0 /
+b0 e
+0,
+#245000
+1,
+#250000
+0,
+#255000
+1,
+#260000
+0,
+#265000
+1,
+#270000
+b0 !
+b0 3
+b0 5
+b1000 I
+b1000 V
+b1000 c
+0&
+0:
+0)
+0=
+b0 $
+b0 0
+b0 8
+b0 ?
+b0 J
+b0 #
+b0 1
+b0 7
+b0 L
+b0 W
+b0 "
+b0 2
+b0 6
+b0 Y
+b0 d
+0.
+0,
+#275000
+1,
+#280000
+0,
+#285000
+1,
+#290000
+b100 I
+b100 V
+b100 c
+1+
+1f
+1.
+0,
+#295000
+b100 !
+b100 3
+b100 5
+b1001 c
+b1001 V
+b1001 I
+b100 "
+b100 2
+b100 6
+b100 Y
+b100 d
+b100 #
+b100 1
+b100 7
+b100 L
+b100 W
+b100 $
+b100 0
+b100 8
+b100 ?
+b100 J
+1,
+#300000
+bx >
+b101 I
+b101 V
+b101 c
+b0xxxx -
+b0xxxx /
+0+
+b0xxxx e
+0f
+0,
+#305000
+1%
+19
+b101 !
+b101 3
+b101 5
+b11 I
+b1010 V
+b1010 c
+x&
+x:
+x)
+x=
+bx $
+bx 0
+bx 8
+bx ?
+bx J
+b101 #
+b101 1
+b101 7
+b101 L
+b101 W
+b101 "
+b101 2
+b101 6
+b101 Y
+b101 d
+1,
+#310000
+b0 >
+b110 V
+b110 c
+b0 -
+b0 /
+1+
+b0 e
+1f
+0,
+#315000
+0%
+09
+b110 !
+b110 3
+b110 5
+b11 c
+b11 V
+1&
+1:
+b110 "
+b110 2
+b110 6
+b110 Y
+b110 d
+b110 #
+b110 1
+b110 7
+b110 L
+b110 W
+0)
+0=
+b11 $
+b11 0
+b11 8
+b11 ?
+b11 J
+1,
+#320000
+b111 V
+b111 c
+0+
+0f
+0,
+#325000
+1*
+14
+b111 !
+b111 3
+b111 5
+1(
+1<
+b111 #
+b111 1
+b111 7
+b111 L
+b111 W
+1'
+1;
+b111 "
+b111 2
+b111 6
+b111 Y
+b111 d
+1,
+#330000
+0,
+#335000
+1,
+#340000
+0,
+#345000
+1,
+#350000
+0,
+#355000
+1,
+#360000
+0*
+04
+b0 !
+b0 3
+b0 5
+b1000 I
+b1000 V
+b1000 c
+0&
+0:
+b0 $
+b0 0
+b0 8
+b0 ?
+b0 J
+0(
+0<
+b0 #
+b0 1
+b0 7
+b0 L
+b0 W
+0'
+0;
+b0 "
+b0 2
+b0 6
+b0 Y
+b0 d
+0.
+0,
+#365000
+1,
+#370000
+0,
+#375000
+1,
+#380000
+b100 I
+b100 V
+b100 c
+1+
+1f
+1.
+0,
+#385000
+b100 !
+b100 3
+b100 5
+b1001 c
+b1001 V
+b1001 I
+b100 "
+b100 2
+b100 6
+b100 Y
+b100 d
+b100 #
+b100 1
+b100 7
+b100 L
+b100 W
+b100 $
+b100 0
+b100 8
+b100 ?
+b100 J
+1,
+#390000
+0,
+#395000
+b1001 !
+b1001 3
+b1001 5
+b1010 I
+b1010 V
+b1010 c
+b1001 $
+b1001 0
+b1001 8
+b1001 ?
+b1001 J
+b1001 #
+b1001 1
+b1001 7
+b1001 L
+b1001 W
+b1001 "
+b1001 2
+b1001 6
+b1001 Y
+b1001 d
+1,
+#400000
+0,
+#405000
+b1010 !
+b1010 3
+b1010 5
+b11 c
+b11 V
+b11 I
+b1010 "
+b1010 2
+b1010 6
+b1010 Y
+b1010 d
+b1010 #
+b1010 1
+b1010 7
+b1010 L
+b1010 W
+b1010 $
+b1010 0
+b1010 8
+b1010 ?
+b1010 J
+1,
+#410000
+0+
+0f
+0,
+#415000
+b11 !
+b11 3
+b11 5
+b11 $
+b11 0
+b11 8
+b11 ?
+b11 J
+b11 #
+b11 1
+b11 7
+b11 L
+b11 W
+b11 "
+b11 2
+b11 6
+b11 Y
+b11 d
+1,
+#420000
+0,
+#425000
+1,
+#430000
+0,
+#435000
+1,
+#440000
+0,
+#445000
+1,
+#450000
+0,

@@ -1,0 +1,39 @@
+VCD info: dumpfile detect.vcd opened for output.
+=== [1] Fault-free runs: expect NO detection ===
+  correct PIN : state=0111 access=1
+  wrong PIN   : state=0011 access=0
+=== [2] All 15 masks injected from IDLE ===
+  mask  state | DMR PAR TMR(copy) ECC  class        located  corrected
+  0001  0101  |  1   1   1(001)    1    1-bit fixed  0001     0100
+  0010  0110  |  1   1   1(001)    1    1-bit fixed  0010     0100
+  0011  0111  |  1   0   1(001)    1    uncorrect.   0000     0111
+  0100  0000  |  1   1   1(001)    1    1-bit fixed  0100     0100
+  0101  0001  |  1   0   1(001)    1    uncorrect.   0000     0001
+  0110  0010  |  1   0   1(001)    1    uncorrect.   0000     0010
+  0111  0011  |  1   1   1(001)    1    uncorrect.   0000     0011
+  1000  1100  |  1   1   1(001)    1    1-bit fixed  1000     0100
+  1001  1101  |  1   0   1(001)    1    uncorrect.   0000     1101
+  1010  1110  |  1   0   1(001)    1    uncorrect.   0000     1110
+  1011  1111  |  1   1   1(001)    1    uncorrect.   0000     1111
+  1100  1000  |  1   0   1(001)    1    uncorrect.   0000     1000
+  1101  1001  |  1   1   1(001)    1    uncorrect.   0000     1001
+  1110  1010  |  1   1   1(001)    1    uncorrect.   0000     1010
+  1111  1011  |  1   0   1(001)    1    uncorrect.   0000     1011
+=== [3] All 15 masks from every state (9 states x 15) ===
+  done: 150 faults injected so far
+=== [4] Bypass: LOCKED + mask 0100 -> SUCCESS ===
+  attacked: state=0111 access=1 | ECC corrected=0011 TMR voted=0011
+=== [5] Even-weight bypass: ERR_1 path + mask 1111 -> SUCCESS ===
+  attacked: state=0111 access=1 | PAR=0 DMR=1 ECC_unc=1 TMR voted=1000
+=== [6] Monte Carlo Randomized Stress Test (50 Iterations) ===
+
+=== SUMMARY ===
+  checks pass/fail     : 348 / 0
+  false alarms         : 0
+  faults injected      : 202
+  DMR detected         : 202
+  Parity detected      : 104
+  TMR detected         : 202  (state corrected by vote: 202)
+  ECC(8,4) detected    : 202  (corrected+located: 52, uncorrectable: 150)
+  Combined detected    : 202
+C:\Users\Fr3d\OneDrive\Desktop\DLD Project\Combined Testbench\testbench.sv:151: $finish called at 8266000 (1ps)

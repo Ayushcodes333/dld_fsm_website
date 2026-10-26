@@ -1,0 +1,486 @@
+$date
+	Mon Oct 12 09:10:20 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 4 ! state_out [3:0] $end
+$var wire 1 " parity_out $end
+$var wire 1 # metastable_detected $end
+$var wire 1 $ alarm_out $end
+$var wire 1 % access_granted $end
+$var reg 1 & auth_in $end
+$var reg 1 ' clk $end
+$var reg 5 ( fault_mask [4:0] $end
+$var reg 1 ) rst_n $end
+$scope module uut $end
+$var wire 1 $ alarm_out $end
+$var wire 1 & auth_in $end
+$var wire 1 ' clk $end
+$var wire 5 * fault_mask [4:0] $end
+$var wire 1 # metastable_detected $end
+$var wire 1 " parity_out $end
+$var wire 1 ) rst_n $end
+$var wire 4 + state_out [3:0] $end
+$var wire 1 , is_metastable $end
+$var parameter 4 - ERR_1 $end
+$var parameter 4 . ERR_2 $end
+$var parameter 4 / ERR_3 $end
+$var parameter 1 0 EXPECTED_PARITY $end
+$var parameter 4 1 GOT_1 $end
+$var parameter 4 2 GOT_10 $end
+$var parameter 4 3 GOT_101 $end
+$var parameter 4 4 IDLE $end
+$var parameter 4 5 LOCKED $end
+$var parameter 4 6 SUCCESS $end
+$var reg 1 % access_granted $end
+$var reg 1 7 alarm $end
+$var reg 4 8 next_state [3:0] $end
+$var reg 1 9 parity $end
+$var reg 4 : state [3:0] $end
+$upscope $end
+$scope task apply_stimulus $end
+$var reg 5 ; mask [4:0] $end
+$var reg 1 < in_val $end
+$upscope $end
+$scope task reset_fsm $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b111 6
+b11 5
+b0 4
+b110 3
+b101 2
+b100 1
+00
+b1010 /
+b1001 .
+b1000 -
+$end
+#0
+$dumpvars
+0<
+bx ;
+b0 :
+09
+b1000 8
+07
+0,
+b0 +
+b0 *
+0)
+b0 (
+0'
+0&
+0%
+0$
+0#
+0"
+b0 !
+$end
+#5000
+1'
+#10000
+0'
+#15000
+1'
+#20000
+b100 8
+1&
+b0 ;
+1<
+1)
+0'
+#25000
+b1001 8
+1"
+19
+b100 !
+b100 +
+b100 :
+1'
+#30000
+b101 8
+0&
+0<
+0'
+#35000
+b1010 8
+b101 !
+b101 +
+b101 :
+1'
+#40000
+b110 8
+1&
+1<
+0'
+#45000
+b11 8
+0"
+09
+b110 !
+b110 +
+b110 :
+1'
+#50000
+b111 8
+0&
+0<
+0'
+#55000
+1%
+b111 !
+b111 +
+b111 :
+1'
+#60000
+0'
+#65000
+1'
+#70000
+0'
+#75000
+1'
+#80000
+0'
+#85000
+1'
+#90000
+0%
+b1000 8
+b0 !
+b0 +
+b0 :
+0)
+0'
+#95000
+1'
+#100000
+0'
+#105000
+1'
+#110000
+b100 8
+1&
+1<
+1)
+0'
+#115000
+b1001 8
+1"
+19
+b100 !
+b100 +
+b100 :
+1'
+#120000
+b101 8
+b0x (
+b0x *
+0&
+b0x ;
+0<
+0'
+#125000
+1#
+1,
+b11 8
+b10x !
+b10x +
+b10x :
+1'
+#130000
+b0 (
+b0 *
+1&
+b0 ;
+1<
+0'
+#135000
+0#
+0,
+1$
+17
+0"
+09
+b11 !
+b11 +
+b11 :
+1'
+#140000
+0&
+0<
+0'
+#145000
+1'
+#150000
+0'
+#155000
+1'
+#160000
+0'
+#165000
+1'
+#170000
+0'
+#175000
+1'
+#180000
+b1000 8
+0$
+07
+b0 !
+b0 +
+b0 :
+0)
+0'
+#185000
+1'
+#190000
+0'
+#195000
+1'
+#200000
+b100 8
+1&
+1<
+1)
+0'
+#205000
+b1001 8
+1"
+19
+b100 !
+b100 +
+b100 :
+1'
+#210000
+b101 8
+0&
+0<
+0'
+#215000
+b1010 8
+b101 !
+b101 +
+b101 :
+1'
+#220000
+b110 8
+1&
+1<
+0'
+#225000
+b11 8
+0"
+09
+b110 !
+b110 +
+b110 :
+1'
+#230000
+b111 8
+bx0000 (
+bx0000 *
+0&
+bx0000 ;
+0<
+0'
+#235000
+b11 8
+1#
+1,
+x"
+x9
+b111 !
+b111 +
+b111 :
+1'
+#240000
+b0 (
+b0 *
+b0 ;
+0'
+#245000
+1$
+17
+b11 !
+b11 +
+b11 :
+1'
+#250000
+0'
+#255000
+1'
+#260000
+0'
+#265000
+1'
+#270000
+b1000 8
+0#
+0,
+0$
+07
+0"
+09
+b0 !
+b0 +
+b0 :
+0)
+0'
+#275000
+1'
+#280000
+0'
+#285000
+1'
+#290000
+b100 8
+1&
+1<
+1)
+0'
+#295000
+b1001 8
+1"
+19
+b100 !
+b100 +
+b100 :
+1'
+#300000
+b101 8
+bx (
+bx *
+0&
+bx ;
+0<
+0'
+#305000
+1#
+1,
+b11 8
+x"
+x9
+bx !
+bx +
+bx :
+1'
+#310000
+b0 (
+b0 *
+b0 ;
+0'
+#315000
+1$
+17
+b11 !
+b11 +
+b11 :
+1'
+#320000
+0'
+#325000
+1'
+#330000
+0'
+#335000
+1'
+#340000
+b1000 8
+0#
+0,
+0$
+07
+0"
+09
+b0 !
+b0 +
+b0 :
+0)
+0'
+#345000
+1'
+#350000
+0'
+#355000
+1'
+#360000
+b100 8
+1&
+1<
+1)
+0'
+#365000
+b1001 8
+1"
+19
+b100 !
+b100 +
+b100 :
+1'
+#370000
+b101 8
+0&
+0<
+0'
+#375000
+b1010 8
+b101 !
+b101 +
+b101 :
+1'
+#380000
+b110 8
+1&
+1<
+0'
+#385000
+b11 8
+0"
+09
+b110 !
+b110 +
+b110 :
+1'
+#390000
+b111 8
+b10000 (
+b10000 *
+0&
+b10000 ;
+0<
+0'
+#395000
+1"
+19
+b111 !
+b111 +
+b111 :
+1'
+#400000
+b0 (
+b0 *
+b0 ;
+0'
+#405000
+1'
+#410000
+0'
+#415000
+1'
+#420000
+0'
+#425000
+1'
+#430000
+0'

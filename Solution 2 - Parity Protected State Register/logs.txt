@@ -1,0 +1,73 @@
+VCD info: dumpfile fsm_simulation.vcd opened for output.
+
+=========================================================================
+SCENARIO 1: Correct Password (1 -> 0 -> 1 -> 0) - No Faults (mask=00000)
+=========================================================================
+Time=  0 ns | in=0 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=20000 ns | in=1 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=25000 ns | in=1 | mask=00000 | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=30000 ns | in=0 | mask=00000 | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=35000 ns | in=0 | mask=00000 | state=0101 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=40000 ns | in=1 | mask=00000 | state=0101 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=45000 ns | in=1 | mask=00000 | state=0110 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=50000 ns | in=0 | mask=00000 | state=0110 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=55000 ns | in=0 | mask=00000 | state=0111 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=1
+>> SCENARIO 1 PASSED: State=SUCCESS (0111), Alarm=0 => Access Granted!
+
+=========================================================================
+SCENARIO 2: Laser Attack -> Metastable state[0] (mask=5'b0000x)
+=========================================================================
+Time=90000 ns | in=0 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=110000 ns | in=1 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=115000 ns | in=1 | mask=00000 | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=120000 ns | in=0 | mask=0000x | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=125000 ns | in=0 | mask=0000x | state=010x (P:x, FF:0, OK:0, Meta:1, Alarm:0) | access=0
+Time=130000 ns | in=1 | mask=00000 | state=010x (P:x, FF:0, OK:0, Meta:1, Alarm:0) | access=0
+Time=135000 ns | in=1 | mask=00000 | state=0011 (P:0, FF:0, OK:1, Meta:0, Alarm:1) | access=0
+Time=140000 ns | in=0 | mask=00000 | state=0011 (P:0, FF:0, OK:1, Meta:0, Alarm:1) | access=0
+>> SCENARIO 2 PASSED: Metastable state[0] detected! Alarm latched (1), Access Denied!
+
+=========================================================================
+SCENARIO 3: Laser Attack -> Metastable Parity FF (mask=5'bx0000)
+=========================================================================
+Time=180000 ns | in=0 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=200000 ns | in=1 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=205000 ns | in=1 | mask=00000 | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=210000 ns | in=0 | mask=00000 | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=215000 ns | in=0 | mask=00000 | state=0101 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=220000 ns | in=1 | mask=00000 | state=0101 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=225000 ns | in=1 | mask=00000 | state=0110 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=230000 ns | in=0 | mask=x0000 | state=0110 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=235000 ns | in=0 | mask=x0000 | state=0111 (P:1, FF:x, OK:0, Meta:1, Alarm:0) | access=0
+Time=240000 ns | in=0 | mask=00000 | state=0111 (P:1, FF:x, OK:0, Meta:1, Alarm:0) | access=0
+Time=245000 ns | in=0 | mask=00000 | state=0011 (P:0, FF:0, OK:1, Meta:0, Alarm:1) | access=0
+>> SCENARIO 3 PASSED: Metastable Parity FF detected! Alarm latched (1), AUTH Revoked!
+
+=========================================================================
+SCENARIO 4: Full Laser Wash -> All FFs Metastable (mask=5'bxxxxx)
+=========================================================================
+Time=270000 ns | in=0 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=290000 ns | in=1 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=295000 ns | in=1 | mask=00000 | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=300000 ns | in=0 | mask=xxxxx | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=305000 ns | in=0 | mask=xxxxx | state=xxxx (P:x, FF:x, OK:0, Meta:1, Alarm:0) | access=0
+Time=310000 ns | in=0 | mask=00000 | state=xxxx (P:x, FF:x, OK:0, Meta:1, Alarm:0) | access=0
+Time=315000 ns | in=0 | mask=00000 | state=0011 (P:0, FF:0, OK:1, Meta:0, Alarm:1) | access=0
+>> SCENARIO 4 PASSED: Massive glitch caught! All FFs protected, Access Denied!
+
+=========================================================================
+SCENARIO 5: Clean Bit-Flip Attack on state[2] (mask=5'b00100)
+=========================================================================
+Time=340000 ns | in=0 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=360000 ns | in=1 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:0) | access=0
+Time=365000 ns | in=1 | mask=00000 | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=370000 ns | in=0 | mask=00100 | state=0100 (P:1, FF:1, OK:1, Meta:0, Alarm:0) | access=0
+Time=375000 ns | in=0 | mask=00100 | state=0001 (P:1, FF:0, OK:0, Meta:0, Alarm:0) | access=0
+Time=380000 ns | in=1 | mask=00000 | state=0001 (P:1, FF:0, OK:0, Meta:0, Alarm:0) | access=0
+Time=385000 ns | in=1 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:1) | access=0
+Time=390000 ns | in=0 | mask=00000 | state=0000 (P:0, FF:0, OK:1, Meta:0, Alarm:1) | access=0
+Time=395000 ns | in=0 | mask=00000 | state=0011 (P:0, FF:0, OK:1, Meta:0, Alarm:1) | access=0
+>> SCENARIO 5 PASSED: Clean bit-flip on state[2] broke parity invariant => Alarm=1, Access Denied!
+
+All 5 test scenarios completed successfully.
+C:\Users\Fr3d\OneDrive\Desktop\DLD Project\Solution 2 - Parity Protected State Register\testbench.sv:170: $finish called at 430000 (1ps)

@@ -1,0 +1,2 @@
+VCD info: dumpfile fsm_simulation.vcd opened for output.
+C:\Users\Fr3d\OneDrive\Desktop\DLD Project\FSM\testbench.sv:51: $finish called at 145000 (1ps)
